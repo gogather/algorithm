@@ -4,7 +4,8 @@
 
 ### 图
 
-https://raw.githubusercontent.com/gogather/algorithm/master/directed-graph/graph.png
+[![graph](https://raw.githubusercontent.com/gogather/algorithm/master/directed-graph/graph.png)](https://raw.githubusercontent.com/gogather/algorithm/master/directed-graph/graph.png)
+
 
 ### 链路
 
