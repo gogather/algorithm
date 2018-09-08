@@ -7,7 +7,7 @@ import (
 
 type Integer int
 
-func (i Integer) Compare(value interface{}) int {
+func (i Integer) Compare(value Comparable) int {
 	v := int(value.(Integer))
 	if v < int(i) {
 		return 1

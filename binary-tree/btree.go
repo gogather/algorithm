@@ -3,15 +3,15 @@ package binary_tree
 import "fmt"
 
 // comparable node value
-type NodeValue interface {
-	Compare(value interface{}) int
+type Comparable interface {
+	Compare(value Comparable) int
 }
 
 // binary tree node
 type BTreeNode struct {
 	LNode *BTreeNode
 	RNode *BTreeNode
-	Value NodeValue
+	Value Comparable
 }
 
 func (btn *BTreeNode) String() string {
@@ -28,7 +28,7 @@ func (bt *BTree) String() string {
 	return fmt.Sprintf("Tree Top Node: [%v], Total Node Number: %d", bt.TopNode.Value, bt.NodeNumber)
 }
 
-func (bt *BTree) Insert(value NodeValue) {
+func (bt *BTree) Insert(value Comparable) {
 	node := &BTreeNode{
 		LNode: nil,
 		RNode: nil,
@@ -58,7 +58,7 @@ func (bt *BTree) Insert(value NodeValue) {
 	}
 }
 
-func (bt *BTree) Search(value NodeValue) (node *BTreeNode) {
+func (bt *BTree) Search(value Comparable) (node *BTreeNode) {
 	edge := bt.SearchEdge(value)
 	if edge != nil && edge.Value.Compare(value) == 0 {
 		return edge
@@ -67,7 +67,7 @@ func (bt *BTree) Search(value NodeValue) (node *BTreeNode) {
 	}
 }
 
-func (bt *BTree) SearchEdge(value NodeValue) (edge *BTreeNode) {
+func (bt *BTree) SearchEdge(value Comparable) (edge *BTreeNode) {
 	if bt.TopNode == nil {
 		return nil
 	}
